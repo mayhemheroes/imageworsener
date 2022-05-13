@@ -1,6 +1,7 @@
 project: imageworsener
 target: imageworsener-fuzz
 
+
 cmds:
   - cmd: /imagew -w 5 -h 5 @@ - -outfmt png
   - afl: true
