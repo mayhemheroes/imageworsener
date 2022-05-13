@@ -20,7 +20,12 @@ INTDIR:=../src
 OUTLIBDIR:=../src
 OUTEXEDIR:=..
 
-CC:=gcc
+ifeq ($(AFL_INSTRUMENT),1)
+CC=afl-clang-fast
+else
+CC=gcc
+endif
+
 CFLAGS:=-O3 -Wall -Wextra -Wmissing-prototypes -Wformat-security -Wno-unused-parameter
 LDFLAGS:=
 INCLUDES:=-I$(SRCDIR)
